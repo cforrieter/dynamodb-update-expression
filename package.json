@@ -26,13 +26,13 @@
   ],
   "dependencies": {
     "deepmerge": "^1.2.0",
-    "lodash": "^4.16.1"
+    "lodash": "^4.16.1",
+    "mocha": "^6.2.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
     "browserify": "^13.0.1",
+    "chai": "^3.5.0",
     "leche": "^2.1.1",
-    "mocha": "^3.1.2",
     "sinon": "^1.17.4",
     "uglifyjs": "^2.4.10",
     "unit.js": "^2.0.0"
