@@ -287,9 +287,9 @@ var removeExpressionGenerator = function(original, removes, compareResult, path,
 
     if (expr.dataType !== 'list') {
       splittedByDotPropName = expr.name.split('.')
-      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialChars).join('.#')
+      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialCharsInExpression).join('.#')
       splittedByDotPropName.forEach(function(partialName) {
-        request.ExpressionAttributeNames['#' + removeSpecialChars(partialName)] = partialName
+        request.ExpressionAttributeNames['#' + removeSpecialCharsInExpression(partialName)] = partialName
       })
 
       if (hasRemoveExpression) {
@@ -300,9 +300,9 @@ var removeExpressionGenerator = function(original, removes, compareResult, path,
       }
     } else if (expr.value && expr.value.length === 0) {
       splittedByDotPropName = expr.name.split('.')
-      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialChars).join('.#')
+      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialCharsInExpression).join('.#')
       splittedByDotPropName.forEach(function(partialName) {
-        request.ExpressionAttributeNames['#' + removeSpecialChars(partialName)] = partialName
+        request.ExpressionAttributeNames['#' + removeSpecialCharsInExpression(partialName)] = partialName
       })
 
       if (hasRemoveExpression) {
@@ -341,11 +341,11 @@ var removeExpressionGenerator = function(original, removes, compareResult, path,
       }
 
       splittedByDotPropName = expr.name.split('.')
-      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialChars).join('.#')
+      propNameExpressionName = '#' + splittedByDotPropName.map(removeSpecialCharsInExpression).join('.#')
       splittedByDotPropName.forEach(function(partialName) {
-        request.ExpressionAttributeNames['#' + removeSpecialChars(partialName)] = partialName
+        request.ExpressionAttributeNames['#' + removeSpecialCharsInExpression(partialName)] = partialName
       })
-      propNameExpressionValue = ':' + removeSpecialChars(propName)
+      propNameExpressionValue = ':' + removeSpecialCharsInExpression(propName)
 
       if (value.length === 0) {
         // Remove
